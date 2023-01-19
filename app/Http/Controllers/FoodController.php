@@ -9,7 +9,7 @@ class FoodController extends Controller
 {
     //
     public function index(){
-        return Food::all();
+        return Food::with("foodcategory")->get();
     }
     public function hot(){
         return Food::where("hot_menu",1)->get();
