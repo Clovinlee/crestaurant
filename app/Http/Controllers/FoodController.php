@@ -12,6 +12,6 @@ class FoodController extends Controller
         return Food::with("foodcategory")->get();
     }
     public function hot(){
-        return Food::where("hot_menu",1)->get();
+        return Food::with("foodcategory")->where("hot_menu",1)->get();
     }
 }
