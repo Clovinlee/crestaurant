@@ -10,6 +10,10 @@ class Food extends Model
 {
     use HasFactory;
 
+    public function cart(){
+        return $this->hasMany(Cart::class,"food_id");
+    }
+
     public function foodcategory(){
         return $this->hasMany(food_category::class,"food_id");
     }

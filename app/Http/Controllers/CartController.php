@@ -16,7 +16,7 @@ class CartController extends Controller
     public function index()
     {
         //
-        return Cart::all();
+        return Cart::with("food")->get();
     }
 
     /**
